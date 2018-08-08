@@ -1,0 +1,11 @@
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\bin\Debug\netcoreapp2.0\IdentityServer.deps.json
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\bin\Debug\netcoreapp2.0\IdentityServer.runtimeconfig.json
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\bin\Debug\netcoreapp2.0\IdentityServer.runtimeconfig.dev.json
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\bin\Debug\netcoreapp2.0\IdentityServer.dll
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\bin\Debug\netcoreapp2.0\IdentityServer.pdb
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\obj\Debug\netcoreapp2.0\IdentityServer.csprojAssemblyReference.cache
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\obj\Debug\netcoreapp2.0\IdentityServer.csproj.CoreCompileInputs.cache
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\obj\Debug\netcoreapp2.0\IdentityServer.AssemblyInfoInputs.cache
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\obj\Debug\netcoreapp2.0\IdentityServer.AssemblyInfo.cs
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\obj\Debug\netcoreapp2.0\IdentityServer.dll
+D:\rproj\NewsFeed\NewsFeedProject\IdentityServer\obj\Debug\netcoreapp2.0\IdentityServer.pdb
