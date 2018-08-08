@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace NewsFeedApis
 {
@@ -29,13 +21,31 @@ namespace NewsFeedApis
                 .AddAuthorization()
                 .AddJsonFormatters();
 
+            //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
             services.AddAuthentication("Bearer").AddIdentityServerAuthentication(Options =>
             {
                 Options.Authority = "http://localhost:5000";
                 Options.RequireHttpsMetadata = false;
                 Options.ApiName = "NewsFeedApis";
             });
-               
+
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultScheme = "Cookies";
+            //    options.DefaultChallengeScheme = "oidc";
+
+            //})
+            //.AddCookie("Cookies")
+            //.AddOpenIdConnect("oidc", options =>
+            //{
+            //    options.SignInScheme = "Cookies";
+            //    options.Authority = "http://localhost:5000";
+            //    options.RequireHttpsMetadata = false;
+            //    options.ClientId = "client";
+            //    options.SaveTokens = true;
+            //});
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

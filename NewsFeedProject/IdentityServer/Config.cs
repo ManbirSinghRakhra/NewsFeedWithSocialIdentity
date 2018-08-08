@@ -1,8 +1,7 @@
-﻿using IdentityServer4.Models;
-using System;
+﻿using IdentityServer4;
+using IdentityServer4.Models;
+using IdentityServer4.Test;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace IdentityServer
 {
@@ -12,7 +11,7 @@ namespace IdentityServer
         {
             return new List<ApiResource>
             {
-                new ApiResource("NewsFeedApis", "News Feed Apis")
+                new ApiResource("NewsFeedApis", "News Feed Apis"),
             };
         }
 
@@ -23,12 +22,61 @@ namespace IdentityServer
                 new Client
                 {
                     ClientId = "client",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
                     AllowedScopes = { "NewsFeedApis" }
+                },
+                new Client
+                {
+                    ClientId = "NewsFeedMvc",
+                    ClientName = "News Feed Mvc",
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    RedirectUris = {"http://localhost:5002/signin-oidc"},
+                    PostLogoutRedirectUris = {"http://localhost:5002/signout-callback-oidc"},
+
+                    AllowedScopes = {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "NewsFeedApis"
+                    },
+                    AllowOfflineAccess = true
+                }
+            };
+        }
+
+        public static IEnumerable<IdentityResource> GetIdentityResources()
+        {
+            return new List<IdentityResource>
+            {
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile()
+            };
+
+        }
+
+
+        public static List<TestUser> GetUsers()
+        {
+            return new List<TestUser>
+            {
+                new TestUser
+                {
+                    SubjectId = "1",
+                    Username = "Manbir",
+                    Password = "Password1"
+                },
+                new TestUser
+                {
+                    SubjectId = "2",
+                    Username = "Kabir",
+                    Password = "Password2"
                 }
             };
         }
