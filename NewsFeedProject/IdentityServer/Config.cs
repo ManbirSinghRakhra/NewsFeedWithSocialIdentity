@@ -1,4 +1,5 @@
-﻿using IdentityServer4.Models;
+﻿using IdentityServer4;
+using IdentityServer4.Models;
 using IdentityServer4.Test;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace IdentityServer
         {
             return new List<ApiResource>
             {
-                new ApiResource("NewsFeedApis", "News Feed Apis")
+                new ApiResource("NewsFeedApis", "News Feed Apis"),
             };
         }
 
@@ -30,8 +31,31 @@ namespace IdentityServer
                         new Secret("secret".Sha256())
                     },
                     AllowedScopes = { "NewsFeedApis" }
+                },
+                new Client
+                {
+                    ClientId = "NewFeedMvc",
+                    ClientName = "News Feed Mvc",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    RedirectUris = {"http://localhost:5002/signin-oidc"},
+                    PostLogoutRedirectUris = {"http://localhost:5002/signout-callback-oidc"},
+
+                    AllowedScopes = {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                    },
                 }
             };
+        }
+
+        public static IEnumerable<IdentityResource> GetIdentityResources()
+        {
+            return new List<IdentityResource>
+            {
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile()
+            };
+            
         }
 
 
