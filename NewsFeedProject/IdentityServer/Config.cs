@@ -1,10 +1,7 @@
 ﻿using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace IdentityServer
 {
@@ -34,16 +31,22 @@ namespace IdentityServer
                 },
                 new Client
                 {
-                    ClientId = "NewFeedMvc",
+                    ClientId = "NewsFeedMvc",
                     ClientName = "News Feed Mvc",
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
                     RedirectUris = {"http://localhost:5002/signin-oidc"},
                     PostLogoutRedirectUris = {"http://localhost:5002/signout-callback-oidc"},
 
                     AllowedScopes = {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
+                        "NewsFeedApis"
                     },
+                    AllowOfflineAccess = true
                 }
             };
         }
@@ -55,7 +58,7 @@ namespace IdentityServer
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile()
             };
-            
+
         }
 
 
