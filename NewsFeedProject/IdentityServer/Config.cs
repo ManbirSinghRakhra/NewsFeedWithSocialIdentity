@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IdentityServer.Config
+namespace IdentityServer
 {
-    public class config
+    public class Config
     {
         public static IEnumerable<ApiResource> GetApiResources()
         {

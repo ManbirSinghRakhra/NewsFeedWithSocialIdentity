@@ -1,0 +1,14 @@
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\bin\Debug\netcoreapp2.1\NewsFeedApis.deps.json
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\bin\Debug\netcoreapp2.1\NewsFeedApis.runtimeconfig.json
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\bin\Debug\netcoreapp2.1\NewsFeedApis.runtimeconfig.dev.json
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\bin\Debug\netcoreapp2.1\NewsFeedApis.dll
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.csprojAssemblyReference.cache
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.csproj.CoreCompileInputs.cache
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.RazorAssemblyInfo.cache
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.RazorAssemblyInfo.cs
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.AssemblyInfoInputs.cache
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.AssemblyInfo.cs
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.RazorTargetAssemblyInfo.cache
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\bin\Debug\netcoreapp2.1\NewsFeedApis.pdb
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.dll
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.pdb
