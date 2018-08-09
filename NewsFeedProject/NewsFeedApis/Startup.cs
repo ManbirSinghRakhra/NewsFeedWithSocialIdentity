@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NewsFeedApis.Models;
+using NewsFeedApis.Repositories;
+using NewsFeedApis.Repositoryies.RepositoriesImpl;
 
 namespace NewsFeedApis
 {
@@ -43,7 +45,7 @@ namespace NewsFeedApis
             });
 
             services.AddDbContext<NewsFeedContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NewsFeedContext")));
-
+            services.AddScoped<INewsRepository, NewsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

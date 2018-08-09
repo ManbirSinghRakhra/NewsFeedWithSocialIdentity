@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NewsFeedApis.Models;
+using NewsFeedApis.Repositories;
 
 namespace NewsFeedApis.Controllers
 {
@@ -15,76 +16,24 @@ namespace NewsFeedApis.Controllers
     [Authorize]
     public class NewsController : ControllerBase
     {
-        private readonly NewsFeedContext _context;
+        private readonly INewsRepository newsRepository;
 
-        public NewsController(NewsFeedContext context)
+        public NewsController(INewsRepository newsRepository)
         {
-            _context = context;
+            this.newsRepository = newsRepository;
         }
 
         // GET: api/News
         [HttpGet]
-        public IEnumerable<News> GetNews()
+        public async Task<ActionResult<IEnumerable<News>>> GetNewsAsync()
         {
-            return _context.News.Include(c=>c.UserInfo);
-        }
+            return await newsRepository.GetAllNewsArticles();
 
-        // GET: api/News/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetNews([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var news = await _context.News.FindAsync(id);
-
-            if (news == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(news);
-        }
-
-        // PUT: api/News/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutNews([FromRoute] int id, [FromBody] News news)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != news.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(news).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!NewsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
         }
 
         // POST: api/News
         [HttpPost]
+        [ProducesResponseType(400)]
         public async Task<IActionResult> PostNews([FromBody] News news)
         {
             if (!ModelState.IsValid)
@@ -92,36 +41,89 @@ namespace NewsFeedApis.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.News.Add(news);
-            await _context.SaveChangesAsync();
-
+            await newsRepository.SaveNewAsync(news);
             return CreatedAtAction("GetNews", new { id = news.Id }, news);
         }
 
+        // GET: api/News/5
+        //[HttpGet("{id}")]
+        //public async Task<IActionResult> GetNewsAsync([FromRoute] int id)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    var news = await _context.News.FindAsync(id);
+
+        //    if (news == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(news);
+        //}
+
+        // PUT: api/News/5
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutNews([FromRoute] int id, [FromBody] News news)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    if (id != news.Id)
+        //    {
+        //        return BadRequest();
+        //    }
+
+        //    _context.Entry(news).State = EntityState.Modified;
+
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!NewsExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return NoContent();
+        //}
+
+
         // DELETE: api/News/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteNews([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteNews([FromRoute] int id)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            var news = await _context.News.FindAsync(id);
-            if (news == null)
-            {
-                return NotFound();
-            }
+        //    var news = await _context.News.FindAsync(id);
+        //    if (news == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.News.Remove(news);
-            await _context.SaveChangesAsync();
+        //    _context.News.Remove(news);
+        //    await _context.SaveChangesAsync();
 
-            return Ok(news);
-        }
+        //    return Ok(news);
+        //}
 
-        private bool NewsExists(int id)
-        {
-            return _context.News.Any(e => e.Id == id);
-        }
+        //private bool NewsExists(int id)
+        //{
+        //    return _context.News.Any(e => e.Id == id);
+        //}
     }
 }
