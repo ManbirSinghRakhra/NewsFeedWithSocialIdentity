@@ -23,7 +23,7 @@ var config = {
     client_id: "NewsFeedJs",
     redirect_uri: "http://localhost:5003/callback.html",
     response_type: "id_token token",
-    scope: "openid profile NewsFeedApis",
+    scope: "openid profile email NewsFeedApis",
     post_logout_redirect_uri: "http://localhost:5003/index.html",
 };
 
@@ -32,7 +32,7 @@ var mgr = new Oidc.UserManager(config);
 
 mgr.getUser().then(function (user) {
     if (user) {
-        log("User logged in", user.profile);
+        log("User logged in", user);
     }
     else {
         log("User not logged in");
