@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NewsFeedApis.Models;
+using NewsFeedApis.Repositories;
+using NewsFeedApis.Repositoryies.RepositoriesImpl;
 
 namespace NewsFeedApis
 {
@@ -21,8 +25,6 @@ namespace NewsFeedApis
                 .AddAuthorization()
                 .AddJsonFormatters();
 
-            //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-
             services.AddAuthentication("Bearer").AddIdentityServerAuthentication(Options =>
             {
                 Options.Authority = "http://localhost:5000";
@@ -30,21 +32,6 @@ namespace NewsFeedApis
                 Options.ApiName = "NewsFeedApis";
             });
 
-            //services.AddAuthentication(options =>
-            //{
-            //    options.DefaultScheme = "Cookies";
-            //    options.DefaultChallengeScheme = "oidc";
-
-            //})
-            //.AddCookie("Cookies")
-            //.AddOpenIdConnect("oidc", options =>
-            //{
-            //    options.SignInScheme = "Cookies";
-            //    options.Authority = "http://localhost:5000";
-            //    options.RequireHttpsMetadata = false;
-            //    options.ClientId = "client";
-            //    options.SaveTokens = true;
-            //});
 
             services.AddCors(options =>
             {
@@ -57,6 +44,8 @@ namespace NewsFeedApis
                 });
             });
 
+            services.AddDbContext<NewsFeedContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NewsFeedContext")));
+            services.AddScoped<INewsRepository, NewsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
