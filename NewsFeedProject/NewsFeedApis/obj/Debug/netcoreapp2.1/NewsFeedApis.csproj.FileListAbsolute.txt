@@ -25,3 +25,4 @@ D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedA
 D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.RazorTargetAssemblyInfo.cache
 D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.dll
 D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.pdb
+D:\rproj\NewsFeed\NewsFeedProject\NewsFeedApis\obj\Debug\netcoreapp2.1\NewsFeedApis.csprojAssemblyReference.cache

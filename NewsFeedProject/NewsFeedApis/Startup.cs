@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NewsFeedApis.Models;
 
 namespace NewsFeedApis
 {
@@ -21,8 +23,6 @@ namespace NewsFeedApis
                 .AddAuthorization()
                 .AddJsonFormatters();
 
-            //JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-
             services.AddAuthentication("Bearer").AddIdentityServerAuthentication(Options =>
             {
                 Options.Authority = "http://localhost:5000";
@@ -30,21 +30,6 @@ namespace NewsFeedApis
                 Options.ApiName = "NewsFeedApis";
             });
 
-            //services.AddAuthentication(options =>
-            //{
-            //    options.DefaultScheme = "Cookies";
-            //    options.DefaultChallengeScheme = "oidc";
-
-            //})
-            //.AddCookie("Cookies")
-            //.AddOpenIdConnect("oidc", options =>
-            //{
-            //    options.SignInScheme = "Cookies";
-            //    options.Authority = "http://localhost:5000";
-            //    options.RequireHttpsMetadata = false;
-            //    options.ClientId = "client";
-            //    options.SaveTokens = true;
-            //});
 
             services.AddCors(options =>
             {
@@ -56,6 +41,8 @@ namespace NewsFeedApis
                         .AllowAnyMethod();
                 });
             });
+
+            services.AddDbContext<NewsFeedContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NewsFeedContext")));
 
         }
 
