@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using NewsFeedApis.Models;
 using NewsFeedApis.Repositories;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace NewsFeedApis.Controllers
 {
@@ -25,7 +21,8 @@ namespace NewsFeedApis.Controllers
 
         // GET: api/News
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<News>>> GetNewsAsync()
+        [AllowAnonymous]
+        public async Task<ActionResult<List<News>>> GetNewsAsync()
         {
             return await newsRepository.GetAllNewsArticles();
 

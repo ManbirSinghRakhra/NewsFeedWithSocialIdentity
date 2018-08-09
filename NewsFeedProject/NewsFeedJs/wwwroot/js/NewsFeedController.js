@@ -1,5 +1,5 @@
 ﻿var app = angular.module("myNewsFeedApp", []);
-app.controller("myNewsFeedController", function ($scope) {
+app.controller("myNewsFeedController", function ($scope, $http) {
 
 
     //Login and Logout Functions -- Start
@@ -9,6 +9,8 @@ app.controller("myNewsFeedController", function ($scope) {
     $scope.loginSuccessful = false;
     $scope.profileName = "Hi There!";
     $scope.proifleEmail = "";
+    $scope.AllNewsFeeds = [];
+    
 
     var config = null;
     var mgr = null;
@@ -28,7 +30,7 @@ app.controller("myNewsFeedController", function ($scope) {
 
         mgr = new Oidc.UserManager(config);
     }
-
+    getAllNews();
 
     function CheckLoginStatus() {
 
@@ -42,6 +44,8 @@ app.controller("myNewsFeedController", function ($scope) {
                 else {
                     $scope.profileName = user.profile["name"];
                     $scope.profileEmail = user.profile["email"];
+                    $http.defaults.headers.common.Authorization = 'Bearer '+user.access_token;
+
                 }
             })
         })
@@ -63,12 +67,22 @@ app.controller("myNewsFeedController", function ($scope) {
 
     //Call to api -- Start
 
-    function postFeed() {
+    $scope.postFeed = function() {
         DisplayFeedHelpMessage();
+
     }
 
-    function getAllFeed() {
+    function getAllNews() {
         DisplayFeedHelpMessage();
+        $http({
+            method: "GET",
+            url: "http://localhost:5001/api/News",
+          
+        }).then(function(response) {
+            $scope.AllNewsFeeds = response.data;
+        }, function myError(response) {
+            console.log(response.statusText);
+        });
     }
 
 
