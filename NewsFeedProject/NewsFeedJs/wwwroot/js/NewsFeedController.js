@@ -78,8 +78,8 @@ app.controller("myNewsFeedController", function ($scope, $http) {
             method: "GET",
             url: "http://localhost:5001/api/News",
           
-        }).then(function(response) {
-            $scope.AllNewsFeeds = response.data;
+        }).then(function (response) {
+           $scope.AllNewsFeeds = response.data;
         }, function myError(response) {
             console.log(response.statusText);
         });
