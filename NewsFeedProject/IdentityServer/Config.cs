@@ -34,6 +34,7 @@ namespace IdentityServer
                     ClientId = "NewsFeedMvc",
                     ClientName = "News Feed Mvc",
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+                    RequireConsent = false,
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
@@ -51,10 +52,10 @@ namespace IdentityServer
                 new Client
                 {
                     ClientId = "NewsFeedJs",
-                    ClientName = "JavaScript Client",
+                    ClientName = "News Feed Main Page",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-
+                    RequireConsent = false,
                     RedirectUris =           { "http://localhost:5003/callback.html" },
                     PostLogoutRedirectUris = { "http://localhost:5003/index.html" },
                     AllowedCorsOrigins =     { "http://localhost:5003" },
