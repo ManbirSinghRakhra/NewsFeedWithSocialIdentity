@@ -17,9 +17,9 @@ namespace NewsFeedApis.Repositoryies.RepositoriesImpl
         {
             this.context = context;
         }
-        public async Task<List<News>> GetAllNewsArticles()
+        public List<News> GetAllNewsArticles()
         {
-            return await context.News.Include(c => c.UserInfo).ToListAsync();
+            return context.News.Include(c => c.UserInfo).ToList();
         }
 
         public async Task<int> SaveNewAsync(News news)

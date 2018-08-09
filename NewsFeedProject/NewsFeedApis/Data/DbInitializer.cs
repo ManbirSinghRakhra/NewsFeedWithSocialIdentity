@@ -10,7 +10,7 @@ namespace NewsFeedApis.Data
     {
         public static void Initialize(NewsFeedContext context)
         {
-            context.Database.EnsureDeleted();
+            //context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
 

@@ -4,6 +4,8 @@ using NewsFeedApis.Models;
 using NewsFeedApis.Repositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
+using NewsFeedApis.Models.DomainModels;
 
 namespace NewsFeedApis.Controllers
 {
@@ -22,9 +24,17 @@ namespace NewsFeedApis.Controllers
         // GET: api/News
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult<List<News>>> GetNewsAsync()
+        public ActionResult<IEnumerable<NewsFeedDTO>> GetNewsAsync()
         {
-            return await newsRepository.GetAllNewsArticles();
+            var  GetAllNewsArticles = newsRepository.GetAllNewsArticles();
+            var newsFeedDto = GetAllNewsArticles.Select(c => new NewsFeedDTO
+            {
+                Message = c.Message,
+                UserEmail = c.UserInfo.UserEmail,
+                UserName = c.UserInfo.UserName,
+                DateCreated = c.DateCreated
+            });
+            return Ok(newsFeedDto);
 
         }
 

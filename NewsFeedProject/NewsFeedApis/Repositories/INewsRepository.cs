@@ -8,7 +8,7 @@ namespace NewsFeedApis.Repositories
 {
     public interface INewsRepository
     {
-        Task<List<News>> GetAllNewsArticles();
+        List<News> GetAllNewsArticles();
         Task<int> SaveNewAsync(News news);
     }
 }
