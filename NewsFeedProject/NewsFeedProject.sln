@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsFeedApis", "NewsFeedApis\NewsFeedApis.csproj", "{008714B5-EC07-46B7-8E1A-159372269CEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsFeedMvc", "NewsFeedMvc\NewsFeedMvc.csproj", "{5A82F1D1-BEDC-461B-A34E-F9AAC481A6C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsFeedJs", "NewsFeedJs\NewsFeedJs.csproj", "{2AEBCDAD-3B4E-4946-8E2E-C8F9A6602ABE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsFeedJs", "NewsFeedJs\NewsFeedJs.csproj", "{2AEBCDAD-3B4E-4946-8E2E-C8F9A6602ABE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{008714B5-EC07-46B7-8E1A-159372269CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{008714B5-EC07-46B7-8E1A-159372269CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{008714B5-EC07-46B7-8E1A-159372269CEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A82F1D1-BEDC-461B-A34E-F9AAC481A6C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A82F1D1-BEDC-461B-A34E-F9AAC481A6C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A82F1D1-BEDC-461B-A34E-F9AAC481A6C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A82F1D1-BEDC-461B-A34E-F9AAC481A6C9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2AEBCDAD-3B4E-4946-8E2E-C8F9A6602ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2AEBCDAD-3B4E-4946-8E2E-C8F9A6602ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AEBCDAD-3B4E-4946-8E2E-C8F9A6602ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
