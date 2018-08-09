@@ -36,6 +36,7 @@ mgr.getUser().then(function (user) {
     }
     else {
         log("User not logged in");
+        mgr.signinRedirect();
     }
 });
 
