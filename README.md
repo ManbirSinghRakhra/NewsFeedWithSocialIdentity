@@ -3,16 +3,15 @@
 ## Introduction to Asp.Net Core and AngularJS based News Feed Environments.
 1. This Application is built using Asp.Net Core 2.0, 2.1 and AngularJs 1.7.
 2. There are three main projects on this application.
-3. I have used SOLID Design principles in the programming level.
-4. I have used in-built Dependency Injections package provided by Microsoft Asp.Net Core. This is very handy. Therefore, for this project, I have decided to use this over Ninject.
-5. I have attempted this project with my best knowledge and honestly.
+3. I have used in-built Dependency Injections package provided by Microsoft Asp.Net Core. This is very handy. Therefore, for this project, I have decided to use this over Ninject.
+4. I have attempted this project with my best knowledge and honestly.
 
 
 
 ## Introduction to main Projects
 * IdentityServer - This handles the identity. I have attached it with Google External Authentication using OIDC. This runs on port no: 5000
 * NewsFeedApis - this is api which only accepts valid and authenticated requests (Authenticated by Identity Server). This runs on port no: 5001
-*  NewsFeedJs -  This is asp.net core and angularjs based api client which is visited by end users. This consumes NewFeedApis and Identifies the users using Identity Server. This runs on port no: 5003
+* NewsFeedJs -  This is asp.net core and angularjs based api client which is visited by end users. This consumes NewFeedApis and Identifies the users using Identity Server. This runs on port no: 5003
 
 ## Instructions to run the application.
 * This application will run without any problem if you hit the start button with Multiple Start Up projects.
