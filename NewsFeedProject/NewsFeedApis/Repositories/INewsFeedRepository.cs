@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace NewsFeedApis.Repositories
 {
-    public interface INewsRepository
+    public interface INewsFeedRepository
     {
         List<News> GetAllNewsArticles();
-        Task<int> SaveNewAsync(News news);
+        Task<int> SaveNewsAsync(News news);
+        bool UserExists(string userName);
+        UserInfo GetUserByUserEmail(string userEmail);
     }
 }
