@@ -12314,11 +12314,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\rproj\\NewsFeed\\NewsFeedProject\\NewsFeedApis\\NewsFeedApis.csproj",
+      "projectUniqueName": "D:\\rproj\\NewFeedProject\\NewsFeedProject\\NewsFeedApis\\NewsFeedApis.csproj",
       "projectName": "NewsFeedApis",
-      "projectPath": "D:\\rproj\\NewsFeed\\NewsFeedProject\\NewsFeedApis\\NewsFeedApis.csproj",
+      "projectPath": "D:\\rproj\\NewFeedProject\\NewsFeedProject\\NewsFeedApis\\NewsFeedApis.csproj",
       "packagesPath": "C:\\Users\\manbir\\.nuget\\packages\\",
-      "outputPath": "D:\\rproj\\NewsFeed\\NewsFeedProject\\NewsFeedApis\\obj\\",
+      "outputPath": "D:\\rproj\\NewFeedProject\\NewsFeedProject\\NewsFeedApis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

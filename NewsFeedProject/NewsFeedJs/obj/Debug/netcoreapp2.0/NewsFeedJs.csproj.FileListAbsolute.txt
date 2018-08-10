@@ -20,3 +20,14 @@ D:\rproj\NewsFeed\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.
 D:\rproj\NewsFeed\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.dll
 D:\rproj\NewsFeed\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.pdb
 D:\rproj\NewsFeed\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.csprojAssemblyReference.cache
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\bin\Debug\netcoreapp2.0\NewsFeedJs.deps.json
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\bin\Debug\netcoreapp2.0\NewsFeedJs.runtimeconfig.json
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\bin\Debug\netcoreapp2.0\NewsFeedJs.runtimeconfig.dev.json
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\bin\Debug\netcoreapp2.0\NewsFeedJs.dll
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\bin\Debug\netcoreapp2.0\NewsFeedJs.pdb
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.csprojAssemblyReference.cache
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.csproj.CoreCompileInputs.cache
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.AssemblyInfoInputs.cache
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.AssemblyInfo.cs
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.dll
+D:\rproj\NewFeedProject\NewsFeedProject\NewsFeedJs\obj\Debug\netcoreapp2.0\NewsFeedJs.pdb

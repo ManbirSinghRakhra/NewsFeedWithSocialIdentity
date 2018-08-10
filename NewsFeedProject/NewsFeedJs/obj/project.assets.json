@@ -12669,11 +12669,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\rproj\\NewsFeed\\NewsFeedProject\\NewsFeedJs\\NewsFeedJs.csproj",
+      "projectUniqueName": "D:\\rproj\\NewFeedProject\\NewsFeedProject\\NewsFeedJs\\NewsFeedJs.csproj",
       "projectName": "NewsFeedJs",
-      "projectPath": "D:\\rproj\\NewsFeed\\NewsFeedProject\\NewsFeedJs\\NewsFeedJs.csproj",
+      "projectPath": "D:\\rproj\\NewFeedProject\\NewsFeedProject\\NewsFeedJs\\NewsFeedJs.csproj",
       "packagesPath": "C:\\Users\\manbir\\.nuget\\packages\\",
-      "outputPath": "D:\\rproj\\NewsFeed\\NewsFeedProject\\NewsFeedJs\\obj\\",
+      "outputPath": "D:\\rproj\\NewFeedProject\\NewsFeedProject\\NewsFeedJs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

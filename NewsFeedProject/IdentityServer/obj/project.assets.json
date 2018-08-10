@@ -12566,11 +12566,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\rproj\\NewsFeed\\NewsFeedProject\\IdentityServer\\IdentityServer.csproj",
+      "projectUniqueName": "D:\\rproj\\NewFeedProject\\NewsFeedProject\\IdentityServer\\IdentityServer.csproj",
       "projectName": "IdentityServer",
-      "projectPath": "D:\\rproj\\NewsFeed\\NewsFeedProject\\IdentityServer\\IdentityServer.csproj",
+      "projectPath": "D:\\rproj\\NewFeedProject\\NewsFeedProject\\IdentityServer\\IdentityServer.csproj",
       "packagesPath": "C:\\Users\\manbir\\.nuget\\packages\\",
-      "outputPath": "D:\\rproj\\NewsFeed\\NewsFeedProject\\IdentityServer\\obj\\",
+      "outputPath": "D:\\rproj\\NewFeedProject\\NewsFeedProject\\IdentityServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
