@@ -1,8 +1,6 @@
 ﻿using NewsFeedApis.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace NewsFeedApis.Data
 {
@@ -10,15 +8,15 @@ namespace NewsFeedApis.Data
     {
         public static void Initialize(NewsFeedContext context)
         {
-           // context.Database.EnsureDeleted();
+            // context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
 
-            //Look for any students.
+            //Look for any News.
             if (context.News.Any())
-                {
-                    return;   // DB has been seeded
-                }
+            {
+                return;   // DB has been seeded
+            }
 
             var user1 = new UserInfo { UserEmail = "manbir.s.rakhra@gmail.com", UserName = "Manbir Singh Rakhra" };
 
