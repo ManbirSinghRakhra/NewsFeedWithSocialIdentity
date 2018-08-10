@@ -14,20 +14,20 @@
 
 ## Instructions to run the application.
 * This application will run without any problem if you hit the start button with Multiple Start Up projects.
-![Multiple Startup Projects](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/MutlipleProjectsRun.JPG)
+![Multiple Startup Projects](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/master/ReadmeImages/MutlipleProjectsRun.JPG)
 
 * If you still have any problem in running the project, Please ensure the following settings for individual projects and solution.
 * Check the properties of IdentityServer project only for Debug
-![IdentityServer Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/IdentityServerDebugProperties.JPG)
+![IdentityServer Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/master/ReadmeImages/IdentityServerDebugProperties.JPG)
 
 * Check the properties of NewsFeedApis project only for Debug
-![NewsFeedApis Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/NewsFeedApisDebugProperties.JPG)
+![NewsFeedApis Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/master/ReadmeImages/NewsFeedApisDebugProperties.JPG)
 
 * Check the properties of NewsFeedJs project only for Debug
-![NewsFeedApis Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/NewsFeedJsDebugProperties.JPG)
+![NewsFeedApis Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/master/ReadmeImages/NewsFeedJsDebugProperties.JPG)
 
 * Check the properties of solution only for Debug
-![Solution Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/SolutionProperties.JPG)
+![Solution Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/master/ReadmeImages/SolutionProperties.JPG)
 
 
 ##Further Important Notes and Instructions
@@ -36,7 +36,7 @@
 
 > Server=(localdb)\\mssqllocaldb;Database=NewsFeedDatabase;Trusted_Connection=True;MultipleActiveResultSets=true
 
-![Solution Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/EnsureCreated.JPG)
+![Solution Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/master/ReadmeImages/EnsureCreated.JPG)
 
 
 * Please be paitence for the first time use. For your best experience, this project will be creating the database and adding some constructive News Feed posts using DbInitilizer class written by me.
@@ -44,7 +44,7 @@
 * IdentityServer: http://localhost:5000/  this runs in the background
 * NewsFeedApis: http://localhost:5001/ this runs in the background
 * NewsFeedJs: https://localhost:5003/ Upon starting the project, this will start your default browser and like below.
-![Browsers](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/Browsers.JPG)
+![Browsers](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/master/ReadmeImages/Browsers.JPG)
 
 
 ##Authors
