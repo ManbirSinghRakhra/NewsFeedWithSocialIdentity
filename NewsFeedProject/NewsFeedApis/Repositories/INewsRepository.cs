@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace NewsFeedApis.Repositories
 {
-    public interface INewsFeedRepository: IUserRepository, INewsRepository
+    public interface INewsRepository
     {
-
+        List<News> GetAllNewsArticles();
+        Task<int> SaveNewsAsync(News news);
     }
 }

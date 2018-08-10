@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace NewsFeedApis.Repositories
 {
-    public interface INewsFeedRepository: IUserRepository, INewsRepository
+    public interface IUserRepository
     {
-
+        bool UserExists(string userName);
+        UserInfo GetUserByUserEmail(string userEmail);
     }
 }

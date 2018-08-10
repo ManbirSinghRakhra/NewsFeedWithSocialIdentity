@@ -35,8 +35,6 @@ namespace NewsFeedApis.Repositoryies.RepositoriesImpl
         {
             return context.UserInfos.SingleOrDefault(c => c.UserEmail == userEmail);
         }
-
-
         public bool UserExists(string userEmail)
         {
             return context.UserInfos.Any(c => c.UserEmail == userEmail);
