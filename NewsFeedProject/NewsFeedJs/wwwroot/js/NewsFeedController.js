@@ -1,7 +1,6 @@
 ﻿var app = angular.module("myNewsFeedApp", []);
 app.controller("myNewsFeedController", function ($scope, $http) {
 
-
     //Login and Logout Functions -- Start
     $scope.loginSuccessful = false;
     $scope.login = login;
