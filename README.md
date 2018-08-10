@@ -48,7 +48,7 @@
 ![Browsers](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/master/ReadmeImages/Browsers.JPG)
 
 
-##Authors
+## Authors
 * Manbir Singh Rakhra 
 * manbir.s.rakhra@gmail.com
 * +61 413 230 257
