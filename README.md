@@ -11,4 +11,4 @@
 
 ## Instructions to run the application.
 * This application will run with any problem if you hit the
-![Multiple Startup Projects](./ReadmeImages/MultipleProjectsRun.JPG "Logo Title Text 1")
+![Multiple Startup Projects](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/MutlipleProjectsRun.JPG "Logo Title Text 1")
