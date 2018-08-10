@@ -41,34 +41,42 @@ namespace NewsFeedApis.Controllers
 
         // POST: api/News
         [HttpPost]
+        [ProducesResponseType(201, Type = typeof(NewsFeedDTO))]
         [ProducesResponseType(400)]
-        public async Task<IActionResult> PostNews(NewsFeedDTO newsDto)
+        public async Task<IActionResult> PostNews([FromBody]NewsFeedDTO newsDto)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || (string.IsNullOrEmpty(newsDto.Message) || string.IsNullOrEmpty(newsDto.UserEmail)|| string.IsNullOrEmpty(newsDto.UserName)))
             {
-                return BadRequest(ModelState);
+                return BadRequest("Invalid Request");
             }
 
             UserInfo userInfo = new UserInfo();
-            if (newsFeedRepository.UserExists(newsDto.UserEmail))
+            News news = new News();
+            try
             {
-                userInfo = newsFeedRepository.GetUserByUserEmail(newsDto.UserEmail);
+                if (newsFeedRepository.UserExists(newsDto.UserEmail))
+                {
+                    userInfo = newsFeedRepository.GetUserByUserEmail(newsDto.UserEmail);
+                }
+                else
+                {
+                    userInfo.UserEmail = newsDto.UserEmail;
+                    userInfo.UserName = newsDto.UserName;
+                }
+
+
+                news.Message = newsDto.Message;
+                news.DateCreated = DateTime.Now;
+                news.UserInfo = userInfo;
+
+                await newsFeedRepository.SaveNewsAsync(news);
             }
-            else
+            catch(Exception exp)
             {
-                userInfo.UserEmail = newsDto.UserEmail;
-                userInfo.UserName = newsDto.UserName;
+                return BadRequest("Invalid Request");
             }
 
 
-            var news = new News
-            {
-                Message= newsDto.Message,
-                DateCreated = DateTime.Now,
-                UserInfo = userInfo
-            };
-
-            await newsFeedRepository.SaveNewsAsync(news);
             return CreatedAtAction("GetNews", new { id = news.Id }, news);
         }
     }
