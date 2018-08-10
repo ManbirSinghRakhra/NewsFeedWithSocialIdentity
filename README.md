@@ -3,6 +3,9 @@
 ## Introduction to Asp.Net Core and AngularJS based News Feed Environments.
 1. This Application is built using Asp.Net Core 2.0, 2.1 and AngularJs 1.7.
 2. There are three main projects on this application.
+3. I have used SOLID Design principles not only in the programming level. But, yes in the Solution Architecture level as well.
+4. I have attempted this project with my best knowledge and honestly.
+
 
 ## Introduction to main Projects
 * IdentityServer - This handles the identity. I have attached it with Google External Authentication using OIDC.
@@ -35,9 +38,18 @@
 
 ![Solution Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/EnsureCreated.JPG)
 
+
+* Please be paitence for the first time use. For your best experience, this project will be creating the database and adding some constructive News Feed posts using DbInitilizer class written by me.
 * Upon start the project, this will bring up three end points
-> IdentityServer: http://localhost:5000/  this runs in the background
-> NewsFeedApis: http://localhost:5001/ this runs in the background
-> NewsFeedJs: https://localhost:5003/ Upon starting the project, this will start your default browser and like below.
+* IdentityServer: http://localhost:5000/  this runs in the background
+* NewsFeedApis: http://localhost:5001/ this runs in the background
+* NewsFeedJs: https://localhost:5003/ Upon starting the project, this will start your default browser and like below.
 ![Browsers](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/Browsers.JPG)
+
+
+##Authors
+* Manbir Singh Rakhra 
+* manbir.s.rakhra@gmail.com
+* +61 413 230 257
+
 
