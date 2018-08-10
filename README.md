@@ -34,3 +34,10 @@
 > Server=(localdb)\\mssqllocaldb;Database=NewsFeedDatabase;Trusted_Connection=True;MultipleActiveResultSets=true
 
 ![Solution Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/EnsureCreated.JPG)
+
+* Upon start the project, this will bring up three end points
+> IdentityServer: http://localhost:5000/  this runs in the background
+> NewsFeedApis: http://localhost:5001/ this runs in the background
+> NewsFeedJs: https://localhost:5003/ Upon starting the project, this will start your default browser and like below.
+![Browsers](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/Browsers.JPG)
+
