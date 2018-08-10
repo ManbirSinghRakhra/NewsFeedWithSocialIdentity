@@ -16,3 +16,12 @@
 * If you still have any problem in running the project, Please ensure the following settings for individual projects and solution.
 * Check the properties of IdentityServer project only for Debug
 ![IdentityServer Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/IdentityServerDebugProperties.JPG)
+
+* Check the properties of NewsFeedApis project only for Debug
+![NewsFeedApis Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/NewsFeedApisDebugProperties.JPG)
+
+* Check the properties of NewsFeedJs project only for Debug
+![NewsFeedApis Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/NewsFeedJsDebugProperties.JPG)
+
+* Check the properties of solution only for Debug
+![Solution Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/SolutionProperties.JPG)
