@@ -10,5 +10,9 @@
 *  NewsFeedJs -  This is asp.net core and angularjs based api client which is visited by end users. This consumes NewFeedApis and Identifies the users using Identity Server.
 
 ## Instructions to run the application.
-* This application will run with any problem if you hit the
-![Multiple Startup Projects](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/MutlipleProjectsRun.JPG "Logo Title Text 1")
+* This application will run without any problem if you hit the start button with Multiple Start Up projects.
+![Multiple Startup Projects](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/MutlipleProjectsRun.JPG)
+
+* If you still have any problem in running the project, Please ensure the following settings for individual projects and solution.
+* Check the properties of IdentityServer project only for Debug
+![IdentityServer Project Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/IdentityServerDebugProperties.JPG)
