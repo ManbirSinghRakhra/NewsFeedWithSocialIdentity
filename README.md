@@ -9,4 +9,6 @@
 * NewsFeedApis - this is api which only accepts valid and authenticated requests (Authenticated by Identity Server)
 *  NewsFeedJs -  This is asp.net core and angularjs based api client which is visited by end users. This consumes NewFeedApis and Identifies the users using Identity Server.
 
-
+## Instructions to run the application.
+* This application will run with any problem if you hit the
+![Multiple Startup Projects](./ReadmeImages/MultipleProjectsRun.JPG "Logo Title Text 1")
