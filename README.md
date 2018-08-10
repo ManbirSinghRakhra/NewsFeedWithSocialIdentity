@@ -4,7 +4,8 @@
 1. This Application is built using Asp.Net Core 2.0, 2.1 and AngularJs 1.7.
 2. There are three main projects on this application.
 3. I have used SOLID Design principles not only in the programming level. But, yes in the Solution Architecture level as well.
-4. I have attempted this project with my best knowledge and honestly.
+4. I have used in-built Dependency Injections package provided by Microsoft Asp.Net Core. This is very handy. Therefore, for this project, I have decided to use this over Ninject.
+5. I have attempted this project with my best knowledge and honestly.
 
 
 
