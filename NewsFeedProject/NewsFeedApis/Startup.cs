@@ -27,9 +27,9 @@ namespace NewsFeedApis
 
             services.AddAuthentication("Bearer").AddIdentityServerAuthentication(Options =>
             {
-                Options.Authority = "http://localhost:5000";
+                Options.Authority = Configuration["Authority"];
                 Options.RequireHttpsMetadata = false;
-                Options.ApiName = "NewsFeedApis";
+                Options.ApiName = Configuration["ApiName"];
             });
 
 
@@ -38,7 +38,7 @@ namespace NewsFeedApis
                 // this defines a CORS policy called "default"
                 options.AddPolicy("default", policy =>
                 {
-                    policy.WithOrigins("http://localhost:5003")
+                    policy.WithOrigins(Configuration["Origins"])
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });

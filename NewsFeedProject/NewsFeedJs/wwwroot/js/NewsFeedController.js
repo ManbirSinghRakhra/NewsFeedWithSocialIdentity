@@ -1,8 +1,6 @@
 ﻿var app = angular.module("myNewsFeedApp", []);
 app.controller("myNewsFeedController", function ($scope, $http) {
 
-
-    //Login and Logout Functions -- Start
     $scope.loginSuccessful = false;
     $scope.login = login;
     $scope.logout = logout;
@@ -11,30 +9,27 @@ app.controller("myNewsFeedController", function ($scope, $http) {
     $scope.proifleEmail = "";
     $scope.AllNewsFeeds = [];
     $scope.PostFeed = PostFeed;
-    apiUrl = "http://localhost:5001/api/News";
-    identityUrl = "http://localhost:5000";
-    clientBaseUrl = "http://localhost:5003/";
 
     var config = null;
     var mgr = null;
 
     InitializeOidc();
     CheckLoginStatus();
+    getAllNews();
 
+    //Login and Logout Functions -- Start
     function InitializeOidc() {
         config = {
-            authority: identityUrl,
-            client_id: "NewsFeedJs",
-            redirect_uri: clientBaseUrl+"callback.html",
-            response_type: "id_token token",
-            scope: "openid profile email NewsFeedApis",
-            post_logout_redirect_uri: clientBaseUrl+"index.html"
+            authority: configJs.identityUrl,
+            client_id: configJs.client_id,
+            redirect_uri: configJs.redirect_uri,
+            response_type: configJs.response_type,
+            scope: configJs.scope,
+            post_logout_redirect_uri: configJs.post_logout_redirect_uri
         };
 
         mgr = new Oidc.UserManager(config);
     }
-
-    getAllNews();
 
     function CheckLoginStatus() {
         mgr.getUser().then(function (user) {
@@ -76,7 +71,7 @@ app.controller("myNewsFeedController", function ($scope, $http) {
 
         $http({
             method: "POST",
-            url: apiUrl,
+            url: configJs.apiUrl,
             data: {
                 message: $scope.NewsFeedText,
                 userName: $scope.profileName,
@@ -96,7 +91,7 @@ app.controller("myNewsFeedController", function ($scope, $http) {
         DisplayFeedHelpMessage();
         $http({
             method: "GET",
-            url: apiUrl
+            url: configJs.apiUrl
           
         }).then(function (response) {
             $scope.AllNewsFeeds = response.data;
