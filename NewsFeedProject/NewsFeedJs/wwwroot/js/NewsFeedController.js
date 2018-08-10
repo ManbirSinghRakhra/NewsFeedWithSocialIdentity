@@ -21,11 +21,11 @@ app.controller("myNewsFeedController", function ($scope, $http) {
     function InitializeOidc() {
         config = {
             authority: configJs.identityUrl,
-            client_id: "NewsFeedJs",
-            redirect_uri: configJs.clientBaseUrl+"callback.html",
-            response_type: "id_token token",
-            scope: "openid profile email NewsFeedApis",
-            post_logout_redirect_uri:configJs.clientBaseUrl+"index.html"
+            client_id: configJs.client_id,
+            redirect_uri: configJs.redirect_uri,
+            response_type: configJs.response_type,
+            scope: configJs.scope,
+            post_logout_redirect_uri: configJs.post_logout_redirect_uri
         };
 
         mgr = new Oidc.UserManager(config);
