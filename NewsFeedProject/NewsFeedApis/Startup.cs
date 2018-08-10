@@ -44,8 +44,9 @@ namespace NewsFeedApis
                 });
             });
 
+            //Database String
             services.AddDbContext<NewsFeedContext>(options => options.UseSqlServer(Configuration.GetConnectionString("NewsFeedContext")));
-            services.AddScoped<INewsRepository, NewsRepository>();
+            services.AddScoped<INewsFeedRepository, NewsFeedRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,7 +10,10 @@ app.controller("myNewsFeedController", function ($scope, $http) {
     $scope.profileName = "Hi There!";
     $scope.proifleEmail = "";
     $scope.AllNewsFeeds = [];
-    
+    $scope.PostFeed = PostFeed;
+    apiUrl = "http://localhost:5001/api/News";
+    identityUrl = "http://localhost:5000";
+    clientBaseUrl = "http://localhost:5003/";
 
     var config = null;
     var mgr = null;
@@ -20,20 +23,20 @@ app.controller("myNewsFeedController", function ($scope, $http) {
 
     function InitializeOidc() {
         config = {
-            authority: "http://localhost:5000",
+            authority: identityUrl,
             client_id: "NewsFeedJs",
-            redirect_uri: "http://localhost:5003/callback.html",
+            redirect_uri: clientBaseUrl+"callback.html",
             response_type: "id_token token",
             scope: "openid profile email NewsFeedApis",
-            post_logout_redirect_uri: "http://localhost:5003/index.html",
+            post_logout_redirect_uri: clientBaseUrl+"index.html"
         };
 
         mgr = new Oidc.UserManager(config);
     }
+
     getAllNews();
 
     function CheckLoginStatus() {
-
         mgr.getUser().then(function (user) {
             $scope.$apply(function () {
                 $scope.loginSuccessful = true;
@@ -44,11 +47,11 @@ app.controller("myNewsFeedController", function ($scope, $http) {
                 else {
                     $scope.profileName = user.profile["name"];
                     $scope.profileEmail = user.profile["email"];
-                    $http.defaults.headers.common.Authorization = 'Bearer '+user.access_token;
+                    $http.defaults.headers.common.Authorization = 'Bearer ' + user.access_token;
 
                 }
-            })
-        })
+            });
+        });
     }
 
     function login() {
@@ -66,26 +69,41 @@ app.controller("myNewsFeedController", function ($scope, $http) {
 
 
     //Call to api -- Start
-
-    $scope.postFeed = function() {
+    function PostFeed() {
         DisplayFeedHelpMessage();
+        if (!$scope.loginSuccessful)
+            return;
 
+        $http({
+            method: "POST",
+            url: apiUrl,
+            data: {
+                message: $scope.NewsFeedText,
+                userName: $scope.profileName,
+                userEmail: $scope.profileEmail
+            }
+
+        }).then(function (response) {
+            $scope.NewsFeedText = "";
+            CheckNewFeedTextBox();
+            getAllNews();
+            }, function myError(response) {
+            console.log(response.statusText);
+        });
     }
 
     function getAllNews() {
         DisplayFeedHelpMessage();
         $http({
             method: "GET",
-            url: "http://localhost:5001/api/News",
+            url: apiUrl
           
         }).then(function (response) {
-           $scope.AllNewsFeeds = response.data;
+            $scope.AllNewsFeeds = response.data;
         }, function myError(response) {
             console.log(response.statusText);
         });
     }
-
-
     //Call to api -- End
 
 
@@ -97,6 +115,10 @@ app.controller("myNewsFeedController", function ($scope, $http) {
 
     function CheckNewFeedTextBox() {
         DisplayFeedHelpMessage();
+        if ($scope.displayFeedHelpMessage) {
+            return;
+        }
+        
         $scope.DisableIfTextBoxEmpty = false;
         if ($scope.NewsFeedText.length === 0) {
             $scope.DisableIfTextBoxEmpty = true;
