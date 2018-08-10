@@ -25,3 +25,12 @@
 
 * Check the properties of solution only for Debug
 ![Solution Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/SolutionProperties.JPG)
+
+
+##Further Important Notes and Instructions
+* In order to give you best experience, I have done automated Database Migrations. This will successfully create the mssqllocaldb database on your first time use given below. 
+> Your Visual Studio 2017 will have this database in built. Or, if you do not have, please change the connection string under project NewsFeedApis-> appsettings.json
+
+> Server=(localdb)\\mssqllocaldb;Database=NewsFeedDatabase;Trusted_Connection=True;MultipleActiveResultSets=true
+
+![Solution Debug Properties](https://github.com/ManbirSinghRakhra/NewsFeedWithSocialIdentity/blob/feature/FinalizingForPackaging/ReadmeImages/EnsureCreated.JPG)
