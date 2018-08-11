@@ -100,14 +100,6 @@ app.controller("myNewsFeedController", function ($scope, $http) {
         });
     }
 
-    function postableData() {
-        return {
-            message: $scope.NewsFeedText,
-            userName: $scope.profileName,
-            userEmail: $scope.profileEmail
-        };
-    }
-
     function getAllNews() {
         DisplayFeedHelpMessage();
         $http({
@@ -121,8 +113,6 @@ app.controller("myNewsFeedController", function ($scope, $http) {
         });
     }
     //Call to api -- End
-
-
 
     //Code to handle View -- Start 
     $scope.CheckNewFeedTextBox = CheckNewFeedTextBox;
