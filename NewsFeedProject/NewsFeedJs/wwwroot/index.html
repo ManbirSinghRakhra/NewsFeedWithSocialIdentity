@@ -56,11 +56,11 @@
 
 
                 <p class="text-info" ng-show="displayFeedHelpMessage">Please login before feed.</p>
-                <form>
+                <form name="newsForm">
                     <div class="form-group">
-                        <input type="text" ng-model="NewsFeedText" ng-keyup="CheckNewFeedTextBox()" class="form-control" placeholder="What's on your mind?">
+                        <input type="text" name="newsFeedText" ng-model="NewsFeedText" ng-keyup="CheckNewFeedTextBox()" class="form-control" required placeholder="What's on your mind?">
                     </div>
-                    <button type="submit" class="btn btn-primary" ng-click="PostFeed()" ng-disabled="DisableIfTextBoxEmpty">Feed!</button>
+                    <button type="submit" class="btn btn-primary" ng-click="PostFeed()" ng-disabled="newsForm.$invalid || !loginSuccessful">Feed!</button>
                 </form>
             </div>
         </section>

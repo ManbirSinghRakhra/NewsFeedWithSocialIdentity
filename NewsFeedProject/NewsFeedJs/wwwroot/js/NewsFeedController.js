@@ -37,16 +37,29 @@ app.controller("myNewsFeedController", function ($scope, $http) {
                 $scope.loginSuccessful = true;
                 if (user === null) {
                     $scope.loginSuccessful = false;
-                    $scope.profileName = "Hi There!";
                 }
-                else {
-                    $scope.profileName = user.profile["name"];
-                    $scope.profileEmail = user.profile["email"];
-                    $http.defaults.headers.common.Authorization = 'Bearer ' + user.access_token;
 
-                }
+                SetUpBearerToken(user);
+                SetUpViewAfterLoginCheck(user);
             });
         });
+    }
+
+    function SetUpViewAfterLoginCheck(user) {
+        if ($scope.loginSuccessful) {
+            $scope.profileName = user.profile["name"];
+            $scope.profileEmail = user.profile["email"];
+            
+        }
+        else {
+            $scope.profileName = "Hi There!";
+        }
+    }
+
+    function SetUpBearerToken(user) {
+        if ($scope.loginSuccessful) {
+            $http.defaults.headers.common.Authorization = 'Bearer ' + user.access_token;
+        }
     }
 
     function login() {
@@ -101,22 +114,14 @@ app.controller("myNewsFeedController", function ($scope, $http) {
     }
     //Call to api -- End
 
-
-
     //Code to handle View -- Start 
     $scope.CheckNewFeedTextBox = CheckNewFeedTextBox;
-    $scope.DisableIfTextBoxEmpty = true;
     $scope.displayFeedHelpMessage = false;
 
     function CheckNewFeedTextBox() {
         DisplayFeedHelpMessage();
         if ($scope.displayFeedHelpMessage) {
             return;
-        }
-        
-        $scope.DisableIfTextBoxEmpty = false;
-        if ($scope.NewsFeedText.length === 0) {
-            $scope.DisableIfTextBoxEmpty = true;
         }
     }
 
