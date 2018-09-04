@@ -9,6 +9,11 @@
     "popper.js": "1.14.3",
     "holderjs": "2.9.4",
     "angular": "1.7.3",
-    "@fortawesome/fontawesome-free": "5.2.0"
+    "@fortawesome/fontawesome-free": "5.2.0",
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.1",
+    "gulp-cssmin": "0.2.0",
+    "gulp-uglify": "3.0.1",
+    "rimraf": "2.6.2"
   }
 }
